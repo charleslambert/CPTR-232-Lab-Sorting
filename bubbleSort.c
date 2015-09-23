@@ -1,7 +1,7 @@
-#include <bubbleSort.h>
+#include "bubbleSort.h"
 
 
-int[] bubbleSort(int array[])
+int *bubbleSort(int array[])
 {
 	
 }
