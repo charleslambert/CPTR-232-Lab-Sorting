@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
 	char insert[]="insert";
 	char select[]="select";
 	int *result;
+	int unavailable=0;
 
 
 	type=argv[1];
@@ -30,13 +31,16 @@ int main(int argc, char *argv[]) {
 		result= insertSort(array, (argc-2));
 	} 
 	else if (0==strcmp(type,select)) {
-		printf("3\n");
+		result= selectSort(array, (argc-2));
 	}
 	else {
-		printf("0\n");
+		printf("Sorry that is not an available sorting method");
+		unavailable=1;
 	}
 	
-	printResult(result, argc-2);
+	if (unavailable != 1) {
+		printResult(result, argc-2);
+	}
 }
 
 void printResult(int array[], int len) {
