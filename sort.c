@@ -5,8 +5,7 @@
 void printResult(int array[], int len);
 
 int main(int argc, char *argv[]) {
-	int len = len;
-	int array[len];
+	int array[(argc-2)];
 	char *type;
 	int i;
 	char bubble[]="bubble";
@@ -25,7 +24,7 @@ int main(int argc, char *argv[]) {
 
 	if (0==strcmp(type,bubble)) {
 	//Checks which type of sort is to be used and implaments that method
-		result= bubbleSort(array, (len));
+		result= bubbleSort(array, (argc-2));
 	} 
 	else if (0==strcmp(type,insert)) {
 		printf("2\n");
@@ -37,12 +36,14 @@ int main(int argc, char *argv[]) {
 		printf("0\n");
 	}
 	
-	printResult(result, len);
+	printResult(result, argc-2);
 }
 
 void printResult(int array[], int len) {
 	//prints out the resulting sorted array in a 
 	//pretty format
+	int i;
+
 	printf("[");
 	for(i=0;i<len;i++) {
 		if (i==len-1) {
