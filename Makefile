@@ -1,5 +1,5 @@
-all: sort.o bubbleSort.o
-	$(CC) -o sort sort.o bubbleSort.o
+all: sort.o bubbleSort.o insertSort.o
+	$(CC) -o sort sort.o bubbleSort.o insertSort.o
 
 run:
 	./sort

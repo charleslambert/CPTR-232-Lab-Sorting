@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 		result= bubbleSort(array, (argc-2));
 	} 
 	else if (0==strcmp(type,insert)) {
-		printf("2\n");
+		result= insertSort(array, (argc-2));
 	} 
 	else if (0==strcmp(type,select)) {
 		printf("3\n");
