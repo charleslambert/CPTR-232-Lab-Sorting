@@ -7,7 +7,7 @@ run:
 clean:
 	rm -f sort test *.o *.obj *.lst
 
-test: test.o bubbleSort.o selectSort.0 insertSort.o
-	$(CC) -o test test.o bubbleSort.o selectSort.0 insertSort.o
+test: test.o bubbleSort.o selectSort.o insertSort.o
+	$(CC) -o test test.o bubbleSort.o selectSort.o insertSort.o
 	./test
 	rm -f test
