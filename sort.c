@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include "bubbleSort.h"
+#include "sort.h"
 
 void printResult(int array[], int len);
 
