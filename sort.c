@@ -1,7 +1,5 @@
 #include "sort.h"
 
-void printResult(int array[], int len);
-
 int main(int argc, char *argv[]) {
 	int array[(argc-2)];
 	char *type;
@@ -32,28 +30,11 @@ int main(int argc, char *argv[]) {
 		result= selectSort(array, (argc-2));
 	}
 	else {
-		printf("Sorry that is not an available sorting method");
+		printf("Sorry that is not an available sorting method.\n");
 		unavailable=1;
 	}
 	
 	if (unavailable != 1) {
 		printResult(result, argc-2);
 	}
-}
-
-void printResult(int array[], int len) {
-	//prints out the resulting sorted array in a 
-	//pretty format
-	int i;
-
-	printf("[");
-	for(i=0;i<len;i++) {
-		if (i==len-1) {
-			printf("%d",array[i]);
-		}
-		else {
-			printf("%d,",array[i]);
-		}
-	}
-	printf("]\n");
 }

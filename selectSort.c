@@ -1,5 +1,5 @@
 #include "selectSort.h"
-#include "bubbleSort.h"
+#include "helperFunctions.h"
 
 int *selectSort(int array[], int len) {
 	int i;

@@ -7,17 +7,18 @@ int *insertSort(int array[], int len) {
 
 	for(i=1;i<len;i++) {
 	//snum is the selected number to be inserted
+		//printResult(array,4);
 		snum=array[i];
 		
-		j=i-1;
-		while (i>0 && array[j]>snum) {
+		j=i;
+		while (j>0 && array[j-1]>snum) {
 		//Shifts the the numbers in the array
 		//before insertion
-			array[j+1]=array[j];
+			array[j]=array[j-1];
 			j=j-1;
 		}
 
-		array[j+1]= snum;
+		array[j]= snum;
 		//insertion of the number
 	}
 
