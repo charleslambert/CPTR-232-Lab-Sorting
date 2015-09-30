@@ -1,3 +1,3 @@
 #include "helperFunctions.h"
 
-int *mergeSort(int array[], int len);
+int *mergeSort(int array[], int p, int r);

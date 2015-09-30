@@ -7,6 +7,7 @@ int main(int argc, char *argv[]) {
 	char bubble[]="bubble";
 	char insert[]="insert";
 	char select[]="select";
+	char merge[]="merge";
 	int *result;
 	int unavailable=0;
 
@@ -28,6 +29,9 @@ int main(int argc, char *argv[]) {
 	} 
 	else if (0==strcmp(type,select)) {
 		result= selectSort(array, (argc-2));
+	}
+	else if (0==strcmp(type,merge)) {
+		result= mergeSort(array, 0,(argc-3));
 	}
 	else {
 		printf("Sorry that is not an available sorting method.\n");

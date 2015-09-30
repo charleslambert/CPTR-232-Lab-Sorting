@@ -25,9 +25,9 @@ void swap(int array[], int i, int j) {
 	array[j]= a;
 }
 
-void merge(int array[],int len) {
-	int subLen1= len/2;
-	int subLen2= len-subLen1;
+void merge(int array[],int p, int q, int r) {
+	int subLen1= q-p+1;
+	int subLen2= r-q;
 	int subArray1[subLen1];
 	int subArray2[subLen2];
 	int i;
@@ -35,27 +35,31 @@ void merge(int array[],int len) {
 	int k;
 
 	for(i=0;i<subLen1;i++) {
-		subArray1[i]=array[i];
+		subArray1[i]=array[p+i];
 	}
 
 	for(j=0;j<subLen2;j++) {
-		subArray2[j]=array[subLen2+j];
+		subArray2[j]=array[q+j+1];
 	}
-	printf("2\n");
-	printResult(subArray1,2);
-	printResult(subArray2,2);
+	printf("help\n");
+	printResult(subArray1,subLen1);
+	printResult(subArray2,subLen2);
+
 	i=0;
 	j=0;
 
 
 	//dont use sentinals
-	for(k=0,k<len,k++) {
-		if(subArray1[i]<=subArray2[j]) {
+	for(k=p;k<r;k++) {
+		if(subArray1[i]<=subArray2[j] && i<subLen1) {
 			array[k]=subArray1[i];
 			i=i+1;
 		}
 		else {
-
+			if (j<subLen2) {
+				array[k]=subArray2[j];
+				j=j+1;
+			}
 		}
 	}
 }
