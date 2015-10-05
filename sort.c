@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 		result= selectSort(array, (argc-2));
 	}
 	else if (0==strcmp(type,merge)) {
-		result= mergeSort(array, 0,(argc-3));
+		result= mergeSort(array, 0,(argc-2));
 	}
 	else {
 		printf("Sorry that is not an available sorting method.\n");

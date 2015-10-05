@@ -2,9 +2,11 @@
 
 int main() {
 	testSwap();
+	testMerge();
 	testBubbleSort();
 	testSelectSort();
 	testInsertSort();
+	testMergeSort();
 	return 0;
 }
 
@@ -25,6 +27,34 @@ void testSwap() {
 	assert(memcmp(array1,array3,sizeof(array1))==0);
 
 	printf("Tests Passed\n");
+}
+
+void testMerge() {
+	int p;
+	int q;
+	int r;
+	int testA[] = {0,1};
+	int testB[]	= {0,1,3};
+	int testC[] = {0,1,2,4};
+	int array1[] = {1,0};
+	int array2[] = {3,0,1};
+	int array3[] = {0,2,1,4};
+
+	printf("Test merge\n");
+
+	printf("Test 1\n");
+	merge(array1,0,0,2);
+	assert(memcmp(array1,testA,sizeof(array1))==0);
+
+	printf("Test 2\n");
+	merge(array2,0,0,3);
+	assert(memcmp(array2,testB,sizeof(array2))==0);
+
+	printf("Test 3\n");
+	merge(array3,0,1,4);
+	assert(memcmp(array3,testC,sizeof(array3))==0);
+
+	printf("Test Passed\n");
 }
 
 void testBubbleSort() {
@@ -120,6 +150,37 @@ void testInsertSort() {
 	printf("Test Ordered Array.\n");
 	assert(memcmp(insertSort(sortArray1,4),sortArray1,sizeof(sortArray1))==0);
 
-	merge(sortArray1,4);
+	printf("Tests Passed\n");
+}
+
+void testMergeSort() {
+	int sortArray1[]={3,5,8,9};
+	int sortArray2[]={-5,-2,5,10,20};
+	int sortArray3[]={2,3,5,5};
+	int disOArray[]={5,9,8,3};
+	int revOArray[]={9,8,5,3};
+	int negArray[]={-5,5,10,-2,20};
+	int repArray[]={5,2,3,5};
+
+	printf("Test mergeSort\n");
+
+	printf("Test Disordered Array.\n");
+	assert(memcmp(mergeSort(disOArray,0,4),sortArray1,sizeof(disOArray))==0);
+
+	printf("Test Reverse Ordered Array.\n");
+	assert(memcmp(mergeSort(revOArray,0,4),sortArray1,sizeof(revOArray))==0);
+
+	printf("Test Negatives in Array.\n");
+	assert(memcmp(mergeSort(negArray,0,5),sortArray2,sizeof(negArray))==0);
+
+	printf("Test Empty Array.\n");
+	assert(mergeSort(NULL,0,1)==NULL);
+
+	printf("Test Repeats in Array.\n");
+	assert(memcmp(mergeSort(repArray,0,4),sortArray3,sizeof(repArray))==0);
+
+	printf("Test Ordered Array.\n");
+	assert(memcmp(mergeSort(sortArray1,0,4),sortArray1,sizeof(sortArray1))==0);
+	
 	printf("Tests Passed\n");
 }
