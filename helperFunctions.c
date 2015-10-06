@@ -32,6 +32,7 @@ void merge(int array[],int p, int q, int r) {
 	int rightA[rALen];
 	int i,j,k;
 
+	//Seperate the Array into two equal subarrays
 	for(i=0;i<lALen;i++) {
 		leftA[i]=array[p+i];
 	}
@@ -42,7 +43,8 @@ void merge(int array[],int p, int q, int r) {
 
 	i=0;
 	j=0;
-
+	
+	//compare and sort the subarrays back into the main array
 	for(k=p;k<r;k++) {
 		if(i>=lALen || (j<rALen && leftA[i]>rightA[j])) {
 			array[k]=rightA[j];

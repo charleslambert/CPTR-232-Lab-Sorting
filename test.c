@@ -157,10 +157,13 @@ void testMergeSort() {
 	int sortArray1[]={3,5,8,9};
 	int sortArray2[]={-5,-2,5,10,20};
 	int sortArray3[]={2,3,5,5};
+	int sortArray4[]={2,3,5,6,10};
 	int disOArray[]={5,9,8,3};
 	int revOArray[]={9,8,5,3};
 	int negArray[]={-5,5,10,-2,20};
 	int repArray[]={5,2,3,5};
+	int unevenArray[]={5,3,10,2,6};
+
 
 	printf("Test mergeSort\n");
 
@@ -181,6 +184,9 @@ void testMergeSort() {
 
 	printf("Test Ordered Array.\n");
 	assert(memcmp(mergeSort(sortArray1,0,4),sortArray1,sizeof(sortArray1))==0);
+
+	printf("Test Uneven Subarray.\n");
+	assert(memcmp(mergeSort(unevenArray,0,5),sortArray4,sizeof(unevenArray))==0);
 	
 	printf("Tests Passed\n");
 }
