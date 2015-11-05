@@ -14,6 +14,7 @@ int *mergeSort(int array[], int p, int r) {
 			merge(array,p,q,r);
 		}
 	}
+
 		return array;
 }
 

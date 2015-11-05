@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 #include "bubbleSort.h"
 #include "selectSort.h"
 #include "insertSort.h"
