@@ -190,3 +190,41 @@ void testMergeSort() {
 	
 	printf("Tests Passed\n");
 }
+
+void testHeapSort() {
+	int sortArray1[]={3,5,8,9};
+	int sortArray2[]={-5,-2,5,10,20};
+	int sortArray3[]={2,3,5,5};
+	int sortArray4[]={2,3,5,6,10};
+	int disOArray[]={5,9,8,3};
+	int revOArray[]={9,8,5,3};
+	int negArray[]={-5,5,10,-2,20};
+	int repArray[]={5,2,3,5};
+	int unevenArray[]={5,3,10,2,6};
+
+
+	printf("Test heapSort\n");
+
+	printf("Test Disordered Array.\n");
+	assert(memcmp(heapSort(disOArray,4),sortArray1,sizeof(disOArray))==0);
+
+	printf("Test Reverse Ordered Array.\n");
+	assert(memcmp(heapSort(revOArray,4),sortArray1,sizeof(revOArray))==0);
+
+	printf("Test Negatives in Array.\n");
+	assert(memcmp(heapSort(negArray,5),sortArray2,sizeof(negArray))==0);
+
+	printf("Test Empty Array.\n");
+	assert(heapSort(NULL,1)==NULL);
+
+	printf("Test Repeats in Array.\n");
+	assert(memcmp(heapSort(repArray,4),sortArray3,sizeof(repArray))==0);
+
+	printf("Test Ordered Array.\n");
+	assert(memcmp(heapSort(sortArray1,4),sortArray1,sizeof(sortArray1))==0);
+
+	printf("Test Uneven Subarray.\n");
+	assert(memcmp(heapSort(unevenArray,5),sortArray4,sizeof(unevenArray))==0);
+	
+	printf("Tests Passed\n");
+}

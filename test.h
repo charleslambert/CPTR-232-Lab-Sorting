@@ -13,3 +13,4 @@ void testBubbleSort();
 void testSelectSort();
 void testInsertSort();
 void testMergeSort();
+void testHeapSort();
