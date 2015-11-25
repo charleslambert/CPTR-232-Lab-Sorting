@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
 	char insert[]="insert";
 	char select[]="select";
 	char merge[]="merge";
+	char heap[]="heap";
 	int *result;
 	int unavailable=0;
 	FILE *fp;
@@ -47,13 +48,16 @@ int main(int argc, char *argv[]) {
 		result= bubbleSort(array, (arrayLen));
 	} 
 	else if (0==strcmp(type,insert)) {
-		result= insertSort(array, (arrayLen));
+		result= insertSort(array, arrayLen);
 	} 
 	else if (0==strcmp(type,select)) {
-		result= selectSort(array, (arrayLen));
+		result= selectSort(array, arrayLen);
 	}
 	else if (0==strcmp(type,merge)) {
-		result= mergeSort(array, 0,(arrayLen));
+		result= mergeSort(array, 0,arrayLen);
+	}
+	else if (0==strcmp(type,heap)) {
+		result= heapSort(array, arrayLen);
 	}
 	else {
 		printf("Sorry that is not an available sorting method.\n");

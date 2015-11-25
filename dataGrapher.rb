@@ -11,6 +11,6 @@ commands = %Q(
   set autoscale
   set xlabel "n"
   set ylabel "T(n)"
-  plot 'select.csv' u 1:2 w l title 'select','insert.csv' u 1:2 w l title 'insert','bubble.csv' u 1:2 w l title 'bubble','merge.csv' u 1:2 w l title 'merge',
+  plot 'select.csv' u 1:2 w l title 'select','insert.csv' u 1:2 w l title 'insert','bubble.csv' u 1:2 w l title 'bubble','merge.csv' u 1:2 w l title 'merge', 'heap'
 )
 gnuplot(commands)

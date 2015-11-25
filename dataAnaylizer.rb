@@ -5,7 +5,8 @@ random = Random.new
 hash = {:insert => [], 
 		:select => [], 
 		:bubble => [], 
-		:merge 	=> []}
+		:merge 	=> [],
+		:heap => []}
 system("make all")
 xarray = []
 
@@ -30,6 +31,7 @@ for i in (100..10000).step(100)
 		system("./sort select num#{i}")
 		system("./sort bubble num#{i}")
 		system("./sort merge num#{i}")
+		system("./sort heap num#{i}")
 	end
 
 	hash.keys.each {|key| 
@@ -58,8 +60,6 @@ hash.keys.each { |key|
 		end
 		}
 	}
-
-p hash[:insert].length == xarray.length
 
 for i in (100..10000).step(100)
 #clean up all files

@@ -2,13 +2,51 @@
 
 int main() {
 	testSwap();
+	testBuildMaxHeap();
+	testMaxHeapify();
 	testMerge();
 	testBubbleSort();
 	testSelectSort();
 	testInsertSort();
 	testMergeSort();
+	testHeapSort();
 	return 0;
 }
+
+void testBuildMaxHeap() {
+	int array1[] = {10,20,5};
+	int array1C[] = {20,10,5};
+	int array2[] = {6,10,5,3,7};
+	int array2C[] = {10,7,5,3,6};
+
+	printf("Test MaxHeapify\n");
+
+	printf("Test 1\n");
+	assert(memcmp(buildMaxHeap(array1, 3),array1C,sizeof(array1))==0);
+
+	printf("Test 2\n");
+	assert(memcmp(buildMaxHeap(array2, 5),array2C, sizeof(array2))==0);
+
+	printf("Tests Passed\n");
+}
+
+void testMaxHeapify() {
+	int array1[] = {10,20,5};
+	int array1C[] = {20,10,5};
+	int array2[] = {6,10,5,3,7};
+	int array2C[] = {10,7,5,3,6};
+
+	printf("Test MaxHeapify\n");
+
+	printf("Test 1\n");
+	assert(memcmp(maxHeapify(array1, 3, 0),array1C,sizeof(array1))==0);
+
+	printf("Test 2\n");
+	assert(memcmp(maxHeapify(array2, 5, 0),array2C, sizeof(array2))==0);
+
+	printf("Tests Passed\n");
+}
+
 
 void testSwap() {
 

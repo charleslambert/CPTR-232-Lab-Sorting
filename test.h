@@ -3,6 +3,7 @@
 #include "insertSort.h"
 #include "selectSort.h"
 #include "mergeSort.h"
+#include "heapSort.h"
 #include "helperFunctions.h"
 #include <stdio.h>
 #include <string.h>
@@ -14,3 +15,5 @@ void testSelectSort();
 void testInsertSort();
 void testMergeSort();
 void testHeapSort();
+void testBuildMaxHeap();
+void testMaxHeapify();

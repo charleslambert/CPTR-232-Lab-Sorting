@@ -1,45 +1,45 @@
-#include 'heapSort.h'
+#include "heapSort.h"
 
-int *heapSort(int[] A, int len) {
-	int i = 0;
+int *heapSort(int A[], int len) {
+	int i = len-1;
 
-	A = buildMaxHeap(A);
-	for (i; i < len; i++;) {
-		swap(0, i);
+	A = buildMaxHeap(A, len);
+	for (i; i > 0; i--) {
+		swap(A, 0, i);
 		len--;
-		A = maxHeapify(A, 1);
+		A = maxHeapify(A, len, 0);
 	}
 
 	return A;
 }
 
-int buildMaxHeap(int[] A, int len) {
+int *buildMaxHeap(int A[], int len) {
 	int i = floor((len/2));
 
-	for (i; i > 0; i--;) {
-		maxHeapify( A, i);
+	for (i; i >= 0; i--) {
+		maxHeapify(A, len, i);
 	}
 
-	return A
+	return A;
 }
 
-int maxHeapify(int[] A, int len, int i) {
+int *maxHeapify(int A[], int len, int i) {
 	int l = left(i);
 	int r = right(i);
 	int largest;
 
-	if ((l <= len) && (A[l] > A[i])) {
+	if ((l <= len-1) && (A[l] > A[i])) {
 		largest = l;
 	}
 	else {
 		largest = i;
 	}
 
-	if ((r <= len) && (A[r] > A[largest])) {
+	if ((r <= len-1) && (A[r] > A[largest])) {
 		largest = r;
 	}
 	if (largest != i){
-		swap(i, largest);
+		swap(A, i, largest);
 		maxHeapify(A, len, largest);
 	}
 
@@ -51,5 +51,5 @@ int left(int i) {
 }
 
 int right(int i) {
-	return 2*i+2
+	return 2*i+2;
 }
